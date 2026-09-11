@@ -1,261 +1,50 @@
-  :root {
-    --bg: #F5F6F5;
-    --bg-raised: #FFFFFF;
-    --ink: #1B1D22;
-    --ink-soft: #52565E;
-    --rule: #D8D9DC;
-    --accent: #3A4F91;
-    --accent-soft: #EDF0F8;
-    --amber: #C77A2E;
-    --amber-soft: #FBF0E2;
+:root {
+  --bg: #EDF2F5; --ink: #14232E; --ink-soft: #4C6373; --rule: #C7D6DD;
+  --rust: #C1531F; --rust-soft: #F7E4D8; --blue: #1F6FA8; --blue-soft: #DDEAF3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101B24; --ink: #E7EEF2; --ink-soft: #8FA6B3; --rule: #2B3D48;
+    --rust: #E27A44; --rust-soft: #2E2015; --blue: #5CA6D6; --blue-soft: #17293380;
   }
+}
+:root[data-theme="dark"] {
+  --bg: #101B24; --ink: #E7EEF2; --ink-soft: #8FA6B3; --rule: #2B3D48;
+  --rust: #E27A44; --rust-soft: #2E2015; --blue: #5CA6D6; --blue-soft: #17293380;
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #16171B;
-      --bg-raised: #1E2025;
-      --ink: #EDEEF0;
-      --ink-soft: #A6A9B1;
-      --rule: #34363C;
-      --accent: #8FA3E8;
-      --accent-soft: #232A3E;
-      --amber: #E3A566;
-      --amber-soft: #2E2519;
-    }
-  }
+/* Wire the palette straight into Bootstrap's own variables so
+   ordinary Bootstrap classes (badge, border-*, text-*, links)
+   pick it up with no bespoke component CSS. */
+:root, [data-bs-theme] {
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--ink);
+  --bs-secondary-color: var(--ink-soft);
+  --bs-border-color: var(--rule);
+  --bs-border-color-translucent: var(--rule);
+  --bs-link-color: var(--blue);
+  --bs-link-hover-color: var(--rust);
+  --bs-primary: var(--blue);
+  --bs-primary-rgb: 31, 111, 168;
+  --bs-primary-bg-subtle: var(--blue-soft);
+  --bs-primary-text-emphasis: var(--blue);
+  --bs-primary-border-subtle: var(--blue-soft);
+  --bs-warning: var(--rust);
+  --bs-warning-rgb: 193, 83, 31;
+  --bs-warning-bg-subtle: var(--rust-soft);
+  --bs-warning-text-emphasis: var(--rust);
+  --bs-warning-border-subtle: var(--rust-soft);
+  --bs-body-font-family: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+}
 
-  :root[data-theme="dark"] {
-    --bg: #16171B;
-    --bg-raised: #1E2025;
-    --ink: #EDEEF0;
-    --ink-soft: #A6A9B1;
-    --rule: #34363C;
-    --accent: #8FA3E8;
-    --accent-soft: #232A3E;
-    --amber: #E3A566;
-    --amber-soft: #2E2519;
-  }
+h1, h2, h3, .navbar-brand {
+  font-family: "Space Grotesk", "IBM Plex Sans KR", sans-serif;
+  font-weight: 500;
+}
 
-  * { box-sizing: border-box; }
+.container-narrow { max-width: 760px; }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  h1, h2, h3 {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 500;
-    margin: 0;
-  }
-
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  header.hero {
-    padding: 96px 0 72px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .eyebrow {
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin-bottom: 18px;
-  }
-
-  h1.name {
-    font-size: 52px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-  }
-
-  .role {
-    font-size: 21px;
-    color: var(--accent);
-    margin-top: 14px;
-    font-family: "Fraunces", Georgia, serif;
-  }
-
-  .hero-desc {
-    max-width: 54ch;
-    margin-top: 24px;
-    color: var(--ink-soft);
-    font-size: 17px;
-  }
-
-  section {
-    padding: 64px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  section:last-of-type {
-    border-bottom: none;
-  }
-
-  h2.section-title {
-    font-size: 28px;
-    margin-bottom: 28px;
-  }
-
-  .about-body p {
-    max-width: 58ch;
-    color: var(--ink-soft);
-  }
-
-  .about-body p + p {
-    margin-top: 16px;
-  }
-
-  .about-body strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  .project {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 28px;
-    padding: 32px 0;
-  }
-
-  .project + .project {
-    border-top: 1px solid var(--rule);
-  }
-
-  .project-tag {
-    font-size: 13px;
-    color: var(--ink-soft);
-    padding-top: 4px;
-  }
-
-  .project-title {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .project-desc {
-    color: var(--ink-soft);
-    max-width: 56ch;
-    margin-bottom: 16px;
-  }
-
-  .project-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .highlight {
-    display: flex;
-    gap: 10px;
-    font-size: 15px;
-    color: var(--ink);
-  }
-
-  .highlight::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--amber);
-    margin-top: 9px;
-    flex-shrink: 0;
-  }
-
-  .project-links {
-    margin-top: 16px;
-  }
-
-  .project-links a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 15px;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 1px;
-  }
-
-  .project-links a:hover {
-    opacity: 0.75;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 40px;
-  }
-
-  .skill-group h3 {
-    font-size: 16px;
-    color: var(--ink-soft);
-    font-family: "IBM Plex Sans KR", sans-serif;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .skill-group ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .skill-group li {
-    background: var(--accent-soft);
-    color: var(--accent);
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-
-  footer.contact {
-    padding: 64px 0 96px;
-  }
-
-  .contact-desc {
-    color: var(--ink-soft);
-    max-width: 50ch;
-    margin-bottom: 28px;
-  }
-
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .contact-links a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 17px;
-    display: inline-flex;
-    align-items: baseline;
-    gap: 10px;
-  }
-
-  .contact-links a span.label {
-    color: var(--ink-soft);
-    font-size: 14px;
-    min-width: 72px;
-  }
-
-  .contact-links a:hover {
-    color: var(--accent);
-  }
-
-  @media (max-width: 560px) {
-    header.hero { padding: 64px 0 48px; }
-    h1.name { font-size: 38px; }
-    .project { grid-template-columns: 1fr; gap: 8px; }
-    .project-tag { padding-top: 0; }
-    .skills-grid { grid-template-columns: 1fr; }
-  }
+.topnav {
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(6px);
+}
