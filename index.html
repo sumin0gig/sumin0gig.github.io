@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김수민 — React Native Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="eyebrow">포트폴리오</div>
+      <h1 class="name">김수민</h1>
+      <div class="role">React Native Developer</div>
+      <p class="hero-desc">
+        비전공(회계) 배경에서 시작해 3년째 React Native로 모바일 앱을 만들고 있습니다.
+        숫자를 다루던 경험은 지금도 데이터와 로직을 꼼꼼하게 짜는 습관으로 이어지고 있어요.
+      </p>
+    </header>
+
+    <section id="about">
+      <h2 class="section-title">소개</h2>
+      <div class="about-body">
+        <p>
+          대학에서 회계를 전공했고, 지금은 <strong>React Native로 모바일 앱을 개발</strong>한 지 3년이 되었습니다.
+          숫자와 규칙을 다루던 회계 공부는 코드의 논리 구조를 이해하는 데도 비슷하게 도움이 되었고,
+          특히 핀테크나 ERP처럼 정확한 계산과 데이터 흐름이 중요한 도메인에 흥미를 느낍니다.
+        </p>
+        <p>
+          작은 디테일까지 신경 쓰는 걸 좋아해서, 애니메이션 하나 움직이는 방식이나
+          알림이 제때 도착하는지 같은 부분까지 직접 확인하고 다듬는 편입니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">프로젝트</h2>
+
+      <div class="project">
+        <div class="project-tag">개인 프로젝트</div>
+        <div>
+          <h3 class="project-title">집안일 관리 앱</h3>
+          <p class="project-desc">
+            혼자 사는 사람들을 위한 집안일 관리 React Native 앱. 귀여운 마스코트 캐릭터가
+            집안일을 함께 챙겨주는 컨셉으로 기획부터 개발까지 진행하고 있습니다.
+          </p>
+          <div class="project-highlights">
+            <div class="highlight">10개의 단순 도형을 조합한 마스코트 애니메이션 리그 설계 (귀·꼬리는 사용자별로 다른 variant 적용)</div>
+            <div class="highlight">variant마다 공통 인터페이스와 pivot 좌표를 공유하는 레지스트리 패턴으로 애니메이션 로직 재사용</div>
+            <div class="highlight">Firebase Cloud Messaging + AWS Lambda/Amplify 기반 Android 푸시 알림 구축</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-tag">개인 프로젝트</div>
+        <div>
+          <h3 class="project-title">invoice_management</h3>
+          <p class="project-desc">
+            회계 배경을 살려 만든 인보이스 관리 React Native 앱. 청구서 생성과 관리 흐름을
+            직접 설계하며 도메인 지식과 개발 역량을 함께 녹여낸 프로젝트입니다.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/sumin0gig/invoice_management" target="_blank" rel="noopener">GitHub에서 코드 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">기술</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Mobile</h3>
+          <ul>
+            <li>React Native</li>
+            <li>TypeScript</li>
+            <li>SVG Animation</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Backend / Infra</h3>
+          <ul>
+            <li>Firebase (FCM)</li>
+            <li>AWS Lambda</li>
+            <li>AWS Amplify</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>도메인 지식</h3>
+          <ul>
+            <li>회계</li>
+            <li>인보이스 / 청구 관리</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Tools</h3>
+          <ul>
+            <li>Git / GitHub</li>
+            <li>Claude Code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="contact">
+      <h2 class="section-title">연락처</h2>
+      <p class="contact-desc">
+        궁금한 점이 있거나 함께 이야기 나누고 싶으시면 편하게 연락 주세요.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:your-email@example.com"><span class="label">Email</span> your-email@example.com</a>
+        <a href="https://github.com/sumin0gig" target="_blank" rel="noopener"><span class="label">GitHub</span> github.com/sumin0gig</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
